@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-ARE Brand Guidelines</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #0F172A;
+            --accent: #F59E0B;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Inter', system_ui, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: #0F172A;
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', system_ui, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem;
+        }
+        
+        .section {
+            margin: 4rem 0;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #0F172A;
+            border-bottom: 3px solid #F59E0B;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        
+        .color-swatch {
+            height: 120px;
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .color-info {
+            padding: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .logo-showcase {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .logo-item {
+            text-align: center;
+        }
+        
+        .logo-item img {
+            max-height: 120px;
+            width: auto;
+        }
+        
+        .logo-label {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        th {
+            background: #0F172A;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .footer {
+            background: #0F172A;
+            color: #94a3b8;
+            padding: 2rem 0;
+            margin-top: 6rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>T-ARE Brand Guidelines</h1>
+            <p style="margin: 0; opacity: 0.8; font-size: 1.1rem;">Engineering the Future of Infrastructure &amp; Technology</p>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <!-- Logo -->
+        <div class="section">
+            <h2 class="section-title">Logo</h2>
+            <div class="logo-showcase">
+                <div class="logo-item">
+                    <img src="images/t-are-logo.png" alt="Primary Logo">
+                    <div class="logo-label">Primary Logo (Vertical)</div>
+                </div>
+                <div class="logo-item">
+                    <img src="images/horizontal-logo.png" alt="Horizontal Logo">
+                    <div class="logo-label">Horizontal Logo (Recommended for headers)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colors -->
+        <div class="section">
+            <h2 class="section-title">Brand Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #0F172A;">
+                        <span>Primary Dark</span>
+                    </div>
+                    <div class="color-info">
+                        <strong>#0F172A</strong><br>
+                        Deep Slate — Main brand color
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #F59E0B; color: #0F172A;">
+                        <span>Accent Gold</span>
+                    </div>
+                    <div class="color-info">
+                        <strong>#F59E0B</strong><br>
+                        Amber/Gold — Energy &amp; premium feel
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: #22D3EE; color: #0F172A;">
+                        <span>Accent Cyan</span>
+                    </div>
+                    <div class="color-info">
+                        <strong>#22D3EE</strong><br>
+                        Cyan — Momentum &amp; technology
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="section">
+            <h2 class="section-title">Typography</h2>
+            <table>
+                <tr>
+                    <th>Element</th>
+                    <th>Font</th>
+                    <th>Weight</th>
+                    <th>Usage</th>
+                </tr>
+                <tr>
+                    <td><strong>Headlines</strong></td>
+                    <td>Space Grotesk / System UI</td>
+                    <td>600–700</td>
+                    <td>H1, H2, Hero titles</td>
+                </tr>
+                <tr>
+                    <td><strong>Body</strong></td>
+                    <td>Inter / System UI</td>
+                    <td>400–500</td>
+                    <td>Paragraphs, navigation</td>
+                </tr>
+                <tr>
+                    <td><strong>Accent / Logo</strong></td>
+                    <td>Bold sans-serif</td>
+                    <td>700–900</td>
+                    <td>Logo, CTAs, emphasis</td>
+                </tr>
+            </table>
+        </div>
+            </table>
+        </div>
+
+        <!-- Logo Usage -->
+        <div class="section">
+            <h2 class="section-title">Logo Usage</h2>
+            <table>
+                <tr>
+                    <th>Version</th>
+                    <th>When to Use</th>
+                </tr>
+                <tr>
+                    <td><strong>Horizontal Logo</strong></td>
+                    <td>Website header, email signatures, navigation bars</td>
+                </tr>
+                <tr>
+                    <td><strong>Primary (Vertical) Logo</strong><br><small>Transparent background</small></td>
+                    <td><strong>Business cards</strong>, <strong>LinkedIn banner</strong>, presentations, proposals, print materials, and formal collateral where maximum brand impact is required.</td>
+                </tr>
+                <tr>
+                    <td><strong>Icon Only</strong></td>
+                    <td>Favicons, app icons, social profile pictures</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Clear Space & Minimum Size -->
+        <div class="section">
+            <h2 class="section-title">Primary Logo (Vertical) — Clear Space &amp; Minimum Size</h2>
+            <p>Maintain generous clear space around the logo equal to the height of the "T" in T-ARE.</p>
+            <p><strong>Minimum width:</strong> 120px (digital) / 35mm (print)</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <strong>T-ARE Trading and Consultancy, Inc.</strong> — Brand Guidelines v1.0<br>
+            Cauayan City, Isabela, Philippines • info@t-areph.com
+        </div>
+    </div>
+
+</body>
+</html>

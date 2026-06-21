@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-ARE Trading and Consultancy, Inc. | Enterprise Engineering &amp; Technology Solutions</title>
+    <meta name="description" content="Turn-key engineering, renewable energy, network infrastructure, and digital transformation solutions for enterprise and municipal growth in the Philippines.">
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="T-ARE Trading and Consultancy, Inc. | Engineering the Future of Infrastructure">
+    <meta property="og:description" content="Premium engineering solutions in Solar, FDAS, EV Charging, Networks, and Digital Transformation. Based in Isabela, Philippines.">
+    <meta property="og:image" content="images/hero-1200.jpg">
+    <meta property="og:url" content="https://t-areph.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="T-ARE Trading and Consultancy, Inc.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="T-ARE | Engineering the Future of Infrastructure &amp; Tech">
+    <meta name="twitter:description" content="Turn-key solutions in Solar, Fire Safety, EV Charging, Networks &amp; Digital Transformation.">
+    <meta name="twitter:image" content="images/hero-1200.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Favicon Set -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" href="images/favicon.ico">
+    <style>
+        :root {
+            /* Light Mode */
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --primary: #0f172a;
+            --accent: #f59e0b;
+            --accent-hover: #d97706;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Mode */
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --primary: #f1f5f9;
+            --accent: #fbbf24;
+            --accent-hover: #f59e0b;
+        }
+        
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .site-header .container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo svg {
+            height: 56px;
+            width: auto;
+            display: block;
+            transition: transform 0.2s ease;
+        }
+        
+        .logo:hover svg {
+            transform: translateY(-1px);
+        }
+        
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        .desktop-nav a {
+            color: #475569;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .desktop-nav a:hover { color: #0f172a; }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.75rem;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #f59e0b;
+            color: #0f172a;
+        }
+        
+        .btn-primary:hover { background: #d97706; }
+        
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #334155;
+        }
+        
+        .btn-outline:hover { background: #1e293b; }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #475569;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 0 1rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            transition: max-height 0.4s cubic-bezier(0.32, 0.72, 0, 1), 
+                        opacity 0.25s ease;
+        }
+        
+        .mobile-menu.open {
+            max-height: 320px;
+            opacity: 1;
+            padding: 1rem;
+        }
+        
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+        }
+        
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .service-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            background: var(--surface);
+            color: var(--text);
+            transition: all 0.2s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--surface);
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-menu-btn { display: block; }
+            .logo img { height: 44px; }
+
+            /* Advanced Logo Animations */
+            #logo-container {
+                display: inline-block;
+                transition: transform 0.1s ease-out;
+                will-change: transform;
+            }
+            
+            #logo-container:hover img {
+                transform: translateY(-2px) scale(1.02);
+                filter: drop-shadow(0 8px 20px rgba(245, 158, 11, 0.2));
+            }
+
+            /* Logo Optimization (from UI Analysis) */
+            .logo img {
+                height: 56px;
+                width: auto;
+                aspect-ratio: 368 / 52;
+                object-fit: contain;
+            }
+            .section-title { font-size: 1.875rem; }
+        }
+
+        /* ========================================
+           PRINT-OPTIMIZED STYLESHEET
+           ======================================== */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                color: #000 !important;
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+
+            .site-header,
+            .mobile-menu-btn,
+            #theme-toggle,
+            .btn,
+            form,
+            footer {
+                display: none !important;
+            }
+
+            .max-w-7xl {
+                max-width: 100% !important;
+                padding: 0 !important;
+            }
+
+            #home {
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+            }
+
+            .card {
+                border: 1px solid #ccc !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+                margin-bottom: 1rem;
+            }
+
+            .service-icon {
+                background: #f1f5f9 !important;
+                color: #0f172a !important;
+            }
+
+            h1, h2, h3 {
+                color: #000 !important;
+            }
+
+            #about {
+                background: white !important;
+                color: #000 !important;
+            }
+
+            #contact {
+                display: none !important;
+            }
+
+            .section-title {
+                font-size: 18pt !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <a href="#home" class="logo" aria-label="T-ARE Trading and Consultancy, Inc." id="logo-container">
+                <img src="images/t-are-logo.png" 
+                     alt="T-ARE Trading and Consultancy, Inc. - Engineering the Future of Infrastructure"
+                     width="368" 
+                     height="52"
+                     style="height: 56px; width: auto; aspect-ratio: 368 / 52; object-fit: contain; display: block; transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), filter 0.3s ease;">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Core Solutions</a>
+                <a href="#contact" class="btn btn-primary" style="padding:0.5rem 1.25rem; font-size:0.75rem;">Get a Quote</a>
+                
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" aria-label="Toggle dark mode" 
+                        style="background: none; border: 1px solid var(--border); color: var(--text); 
+                               width: 36px; height: 36px; border-radius: 9999px; cursor: pointer; 
+                               display: flex; align-items: center; justify-content: center; font-size: 1rem;">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Hamburger -->
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Core Solutions</a>
+            <a href="#contact" class="btn btn-primary" style="width:100%; text-align:center; margin-top:0.5rem;">Get a Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" style="background:#0f172a; color:white; padding:5rem 0 6rem; position:relative; overflow:hidden;">
+        <div class="max-w-7xl px-4" style="position:relative; z-index:10; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:3rem; align-items:center;">
+            <div>
+                <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(245,158,11,0.1); color:#fbbf24; padding:0.25rem 0.75rem; border-radius:9999px; font-size:0.75rem; font-weight:600; border:1px solid rgba(245,158,11,0.2); margin-bottom:1.5rem;">
+                    <span style="width:6px; height:6px; background:#fbbf24; border-radius:50%; display:inline-block; animation:pulse 2s infinite;"></span>
+                    Integrated Industrial Ecosystems
+                </div>
+                
+                <h1 style="font-size:3.1rem; font-weight:900; line-height:1.05; margin-bottom:1.5rem; letter-spacing:-0.04em;">
+                    Engineering the <span style="color:#fbbf24;">Future</span><br>of Infrastructure &amp; Tech.
+                </h1>
+                
+                <p style="color:#94a3b8; font-size:1.05rem; max-width:42ch; margin-bottom:2rem; line-height:1.6;">
+                    T-ARE delivers turn-key engineering, renewable energy, robust network fabrics, and digital transformation solutions for enterprise and municipal growth.
+                </p>
+                
+                <div style="display:flex; flex-wrap:wrap; gap:1rem;">
+                    <a href="#services" class="btn btn-primary">Explore Solutions</a>
+                    <a href="#contact" class="btn btn-outline">Contact Consultancy</a>
+                </div>
+            </div>
+            
+            <!-- Hero Visual Container with LQIP + Blur-up + Cinematic Overlays -->
+            <div id="hero-container" 
+                 style="position: relative; aspect-ratio: 16 / 10; border-radius: 1rem; overflow: hidden; 
+                        background: #1e293b url('images/lqip/lqip-40.jpg') center/cover no-repeat; 
+                        box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4); 
+                        background-size: cover; background-position: center;">
+                
+                <picture>
+                    <!-- WebP Sources -->
+                    <source 
+                        srcset="images/hero-1200.webp 1200w,
+                                images/hero-800.webp 800w,
+                                images/hero-400.webp 400w"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        type="image/webp">
+
+                    <!-- JPG Fallback -->
+                    <img id="hero-image"
+                         src="images/hero-1200.jpg"
+                         srcset="images/hero-1200.jpg 1200w,
+                                 images/hero-800.jpg 800w,
+                                 images/hero-400.jpg 400w"
+                         sizes="(max-width: 768px) 100vw, 50vw"
+                         width="1200" 
+                         height="750"
+                         alt="T-ARE Engineering Solutions - Professional infrastructure and technology deployment"
+                         style="width:100%; height:100%; object-fit: cover; display: block; 
+                                opacity: 0; filter: blur(20px); transform: scale(1.08);
+                                transition: opacity 0.7s ease, filter 0.7s ease, transform 0.7s ease;"
+                         loading="eager"
+                         fetchpriority="high"
+                    >
+                </picture>
+
+                <!-- Subtle Vignette -->
+                <div style="position: absolute; inset: 0; 
+                            background: radial-gradient(circle at center, 
+                                transparent 40%, 
+                                rgba(0,0,0,0.25) 75%, 
+                                rgba(0,0,0,0.45) 100%); 
+                            pointer-events: none;"></div>
+
+                <!-- Grain Texture Overlay -->
+                <div style="position: absolute; inset: 0; 
+                            background-image: url('images/grain-texture.webp'); 
+                            background-size: 180px 180px; 
+                            opacity: 0.07; 
+                            mix-blend-mode: overlay; 
+                            pointer-events: none;"></div>
+
+                <!-- Bottom Gradient Overlay -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.12) 0%, rgba(15,23,42,0.38) 100%);"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="max-w-7xl px-4" style="padding:6rem 1rem;">
+        <div style="text-align:center; max-width:48rem; margin:0 auto 5rem;">
+            <div style="color:#d97706; font-size:0.75rem; font-weight:800; letter-spacing:1.5px; margin-bottom:0.5rem;">OUR SOLUTIONS PORTFOLIO</div>
+            <h2 class="section-title" style="color:#0f172a;">Comprehensive Technical Services Ecosystem</h2>
+            <div style="width:5rem; height:4px; background:#f59e0b; margin:1rem auto 0; border-radius:9999px;"></div>
+        </div>
+        
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:2rem;">
+            <!-- Service Cards -->
+            <div class="card">
+                <div style="padding:2rem;">
+                    <div class="service-icon" style="background:rgba(245,158,11,0.1); color:#d97706;"><i class="fas fa-solar-panel"></i></div>
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.75rem;">Solar Equipment Supply &amp; Installation</h3>
+                    <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Design, procurement, and commissioning of industrial, commercial, and residential solar arrays with smart inverters and BESS.</p>
+                </div>
+                <div style="padding:1rem 2rem; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.75rem; font-weight:700; color:#d97706; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; cursor:pointer;">
+                    Technical Specifications <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div style="padding:2rem;">
+                    <div class="service-icon" style="background:rgba(239,68,68,0.1); color:#dc2626;"><i class="fas fa-fire-extinguisher"></i></div>
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.75rem;">Fire Detection &amp; Alarm Systems (FDAS)</h3>
+                    <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Fully compliant addressable and conventional FDAS with smart detector grids and central monitoring.</p>
+                </div>
+                <div style="padding:1rem 2rem; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.75rem; font-weight:700; color:#dc2626; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; cursor:pointer;">
+                    Compliance Specs <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div style="padding:2rem;">
+                    <div class="service-icon" style="background:rgba(59,130,246,0.1); color:#2563eb;"><i class="fas fa-wifi"></i></div>
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.75rem;">Centralized WiFi Hotspots</h3>
+                    <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Wide-area hotspot distributions for high-density locations with cloud-managed bandwidth and captive portals.</p>
+                </div>
+                <div style="padding:1rem 2rem; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.75rem; font-weight:700; color:#2563eb; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; cursor:pointer;">
+                    Deployment Scope <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div style="padding:2rem;">
+                    <div class="service-icon" style="background:rgba(16,185,129,0.1); color:#059669;"><i class="fas fa-charging-station"></i></div>
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.75rem;">EV Charging Integration</h3>
+                    <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Future-proof EV charging infrastructure with load balancing and secure electrical pathways.</p>
+                </div>
+                <div style="padding:1rem 2rem; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.75rem; font-weight:700; color:#059669; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; cursor:pointer;">
+                    Grid Integration <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div style="padding:2rem;">
+                    <div class="service-icon" style="background:rgba(99,102,241,0.1); color:#4f46e5;"><i class="fas fa-credit-card"></i></div>
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.75rem;">POS &amp; Payment Gateway Solutions</h3>
+                    <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Reliable Point-of-Sale hardware with secure, low-latency, end-to-end encrypted payment clearing.</p>
+                </div>
+                <div style="padding:1rem 2rem; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.75rem; font-weight:700; color:#4f46e5; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; cursor:pointer;">
+                    Fintech Specs <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div style="padding:2rem;">
+                    <div class="service-icon" style="background:rgba(139,92,246,0.1); color:#7c3aed;"><i class="fas fa-code-branch"></i></div>
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.75rem;">Custom Software Development</h3>
+                    <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Tailored enterprise applications, database architectures, and cloud-native development.</p>
+                </div>
+                <div style="padding:1rem 2rem; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.75rem; font-weight:700; color:#7c3aed; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; cursor:pointer;">
+                    Development Capabilities <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div style="padding:2rem;">
+                    <div class="service-icon" style="background:rgba(14,165,233,0.1); color:#0284c7;"><i class="fas fa-server"></i></div>
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.75rem;">Enterprise Network Infrastructure</h3>
+                    <p style="color:#475569; font-size:0.9rem; line-height:1.6;">Structured cabling, rack setups, routing and switching topologies with redundancy.</p>
+                </div>
+                <div style="padding:1rem 2rem; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.75rem; font-weight:700; color:#0284c7; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; cursor:pointer;">
+                    Network Blueprint <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div style="padding:2rem;">
+                    <div class="service-icon" style="background:rgba(20,184,166,0.1); color:#0d9488;"><i class="fas fa-video"></i></div>
+                    <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.75rem;">Closed-Circuit Television (CCTV) Ecosystems</h3>
+                    <p style="color:#475569; font-size:0.9rem; line-height:1.6;">High-definition smart IP surveillance with video analytics, NVR, and cloud remote viewing.</p>
+                </div>
+                <div style="padding:1rem 2rem; background:#f8fafc; border-top:1px solid #e2e8f0; font-size:0.75rem; font-weight:700; color:#0d9488; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; cursor:pointer;">
+                    Surveillance Systems <i class="fas fa-arrow-right" style="margin-left:0.5rem;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="background:#0f172a; color:white; padding:6rem 0;">
+        <div class="max-w-7xl px-4" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:4rem; align-items:center;">
+            <div>
+                <div style="color:#fbbf24; font-size:0.75rem; font-weight:800; letter-spacing:1.5px; margin-bottom:0.5rem;">CORPORATE PROFILE</div>
+                <h2 style="font-size:2.25rem; font-weight:900; line-height:1.1; margin-bottom:1.5rem;">T-ARE Trading &amp; Consultancy, Inc.</h2>
+                <p style="color:#94a3b8; font-size:0.95rem; line-height:1.7; margin-bottom:2rem;">
+                    Headquartered in Isabela, we merge advanced technology distribution with professional technical engineering consultancy. Every system we deploy is built for maximum stability, scalability, and performance transparency.
+                </p>
+            </div>
+            
+            <div style="background:#1e293b; border:1px solid #334155; padding:2.5rem; border-radius:1rem; position:relative;">
+                <div style="position:absolute; top:-1rem; right:-1rem; background:#f59e0b; color:#0f172a; padding:0.5rem 1rem; font-size:0.7rem; font-weight:800; border-radius:0.25rem;">CONSULTANCY MODEL</div>
+                <h4 style="font-size:1.1rem; font-weight:700; margin-bottom:1.75rem; color:#e2e8f0;">Project Workflow Lifecycle</h4>
+                
+                <ol style="position:relative; border-left:2px solid #334155; padding-left:1.5rem; display:flex; flex-direction:column; gap:1.75rem; margin:0;">
+                    <li style="position:relative;">
+                        <span style="position:absolute; left:-2.1rem; top:0.1rem; background:#f59e0b; color:#0f172a; width:1.35rem; height:1.35rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800;">1</span>
+                        <div style="font-weight:700; color:#e2e8f0;">System Assessment &amp; Auditing</div>
+                        <div style="font-size:0.8rem; color:#64748b; margin-top:0.25rem;">Detailed inspections matching regional power infrastructure and structural specifications.</div>
+                    </li>
+                    <li style="position:relative;">
+                        <span style="position:absolute; left:-2.1rem; top:0.1rem; background:#f59e0b; color:#0f172a; width:1.35rem; height:1.35rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800;">2</span>
+                        <div style="font-weight:700; color:#e2e8f0;">Custom Engineering Layout</div>
+                        <div style="font-size:0.8rem; color:#64748b; margin-top:0.25rem;">Strategic mapping for structural access, smart electrical routing, and device placement.</div>
+                    </li>
+                    <li style="position:relative;">
+                        <span style="position:absolute; left:-2.1rem; top:0.1rem; background:#f59e0b; color:#0f172a; width:1.35rem; height:1.35rem; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:800;">3</span>
+                        <div style="font-weight:700; color:#e2e8f0;">Deployment &amp; Performance Validation</div>
+                        <div style="font-size:0.8rem; color:#64748b; margin-top:0.25rem;">On-site configuration, signal-to-load verification, and full turnover certification.</div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-7xl px-4" style="padding:6rem 1rem;">
+        <div style="background:white; border-radius:1.5rem; border:1px solid #e2e8f0; box-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1); overflow:hidden; display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));">
+            <div style="background:#0f172a; color:white; padding:3rem;">
+                <h3 style="font-size:1.5rem; font-weight:900; line-height:1.2; margin-bottom:1rem;">Initialize Your Infrastructure Project</h3>
+                <p style="color:#94a3b8; font-size:0.9rem; line-height:1.7; margin-bottom:2.5rem;">Get in contact with our logistics procurement team or schedule an on-site engineering survey.</p>
+                
+                <div style="display:flex; flex-direction:column; gap:1rem; font-size:0.9rem;">
+                    <div style="display:flex; align-items:flex-start; gap:0.75rem;">
+                        <i class="fas fa-map-marker-alt" style="color:#f59e0b; margin-top:0.2rem;"></i>
+                        <span style="color:#cbd5e1;">Don Jose Canciller Bldg, 60 Rizal Avenue, Cauayan City, Isabela</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                        <i class="fas fa-phone-alt" style="color:#f59e0b;"></i>
+                        <span style="color:#cbd5e1;">0966 405 7004 / 0995 755 8147</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.75rem;">
+                        <i class="fas fa-envelope" style="color:#f59e0b;"></i>
+                        <span style="color:#cbd5e1;">info@t-areph.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="quote-form" style="padding:3rem;">
+                <h4 style="font-size:1.05rem; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0; padding-bottom:1rem; margin-bottom:1.5rem;">Consultation Request Dispatch Panel</h4>
+                
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; margin-bottom:1.5rem;">
+                    <div>
+                        <label for="name" style="display:block; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#64748b; margin-bottom:0.5rem;">Corporate Entity / Full Name</label>
+                        <input type="text" id="name" autocomplete="name" required class="form-input">
+                    </div>
+                    <div>
+                        <label for="email" style="display:block; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#64748b; margin-bottom:0.5rem;">Primary Email Link</label>
+                        <input type="email" id="email" autocomplete="email" required class="form-input">
+                    </div>
+                </div>
+                
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; margin-bottom:1.5rem;">
+                    <div>
+                        <label for="phone" style="display:block; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#64748b; margin-bottom:0.5rem;">Mobile Contact Number</label>
+                        <input type="tel" id="phone" autocomplete="tel" required class="form-input">
+                    </div>
+                    <div>
+                        <label for="vertical" style="display:block; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#64748b; margin-bottom:0.5rem;">Target Technology Vertical</label>
+                        <select id="vertical" autocomplete="off" class="form-input" style="cursor:pointer;">
+                            <option>Solar Equipment Architectures</option>
+                            <option>Fire Detection &amp; Alarm Systems (FDAS)</option>
+                            <option>Centralized WiFi Hotspot Grids</option>
+                            <option>EV Charging System Integrations</option>
+                            <option>POS &amp; Payment Gateway Protocols</option>
+                            <option>Custom Enterprise Software Architecture</option>
+                            <option>Structural Networking &amp; Cabling Infrastructure</option>
+                            <option>CCTV Analytics High-Definition Systems</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom:1.5rem;">
+                    <label for="scope" style="display:block; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; color:#64748b; margin-bottom:0.5rem;">Project Execution Scope Brief</label>
+                    <textarea id="scope" rows="4" autocomplete="off" required placeholder="Outline dimensions, structural conditions..." class="form-input" style="resize:vertical; min-height:100px;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width:100%;">Transmit Requirements Matrix</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background:#020617; color:#64748b; font-size:0.75rem; padding:3rem 0; border-top:1px solid #1e293b;">
+        <div class="max-w-7xl px-4" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1.5rem;">
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+                <span style="font-weight:900; color:white; letter-spacing:1px; background:#0f172a; padding:0.25rem 0.5rem; border-radius:0.25rem; border:1px solid #1e293b;">T-ARE</span>
+                <span>© 2026 T-ARE TRADING AND CONSULTANCY, INC. All Rights Reserved.</span>
+            </div>
+            <div style="display:flex; gap:1.5rem;">
+                <a href="#" style="color:#64748b; text-decoration:none;">Regulatory Frameworks</a>
+                <a href="#" style="color:#64748b; text-decoration:none;">Procurement Legalities</a>
+                <a href="#" style="color:#64748b; text-decoration:none;">Terms of Consultancy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" style="position:fixed; inset:0; background:rgba(15,23,42,0.8); display:none; align-items:center; justify-content:center; z-index:200;">
+        <div style="background:white; border-radius:1rem; padding:2.5rem; max-width:420px; text-align:center; margin:1rem;">
+            <div style="width:4rem; height:4rem; background:#dcfce7; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem;">
+                <i class="fas fa-check" style="font-size:2rem; color:#16a34a;"></i>
+            </div>
+            <h3 style="font-size:1.35rem; font-weight:800; color:#0f172a; margin-bottom:0.75rem;">Request Received</h3>
+            <p style="color:#475569; margin-bottom:2rem;">Our engineering team will contact you within 4 business hours.</p>
+            <button onclick="closeSuccessModal()" class="btn btn-primary" style="padding:0.75rem 2.5rem;">Return to Site</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Premium Mobile Menu
+        (function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (!menuBtn || !mobileMenu) return;
+
+            const icon = menuBtn.querySelector('i');
+            let isOpen = false;
+
+            function toggleMenu() {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    mobileMenu.classList.add('open');
+                    icon.classList.replace('fa-bars', 'fa-times');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    mobileMenu.classList.remove('open');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (isOpen) {
+                        mobileMenu.classList.remove('open');
+                        icon.classList.replace('fa-times', 'fa-bars');
+                        document.body.style.overflow = '';
+                        isOpen = false;
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isOpen) {
+                    mobileMenu.classList.remove('open');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = '';
+                    isOpen = false;
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (isOpen && !mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    mobileMenu.classList.remove('open');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = '';
+                    isOpen = false;
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && isOpen) {
+                    mobileMenu.classList.remove('open');
+                    icon.classList.replace('fa-times', 'fa-bars');
+                    document.body.style.overflow = '';
+                    isOpen = false;
+                }
+            });
+        })();
+
+        // LQIP + Blur-up Effect for Hero Image
+        (function() {
+            const heroImg = document.getElementById('hero-image');
+            const heroContainer = document.getElementById('hero-container');
+            
+            if (!heroImg || !heroContainer) return;
+
+            function showHeroImage() {
+                heroImg.style.opacity = '1';
+                heroImg.style.filter = 'blur(0)';
+                heroImg.style.transform = 'scale(1)';
+                
+                setTimeout(() => {
+                    heroContainer.style.backgroundImage = 'none';
+                }, 900);
+            }
+
+            if (heroImg.complete) {
+                showHeroImage();
+            } else {
+                heroImg.addEventListener('load', showHeroImage);
+            }
+        })();
+
+        // Dark Mode Toggle
+        (function() {
+            const toggle = document.getElementById('theme-toggle');
+            const icon = toggle.querySelector('i');
+            
+            // Set initial theme
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+
+            toggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                
+                if (currentTheme === 'dark') {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                    icon.classList.replace('fa-sun', 'fa-moon');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    icon.classList.replace('fa-moon', 'fa-sun');
+                }
+            });
+        })();
+
+        // Form Handling + Success Modal
+        const form = document.getElementById('quote-form');
+        const successModal = document.getElementById('success-modal');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = 'PROCESSING...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                form.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                successModal.style.display = 'flex';
+            }, 850);
+        });
+
+        function closeSuccessModal() {
+            successModal.style.display = 'none';
+        }
+
+        successModal.addEventListener('click', function(e) {
+            if (e.target === successModal) successModal.style.display = 'none';
+        });
+
+        // 3D Tilt Effect on Logo (Advanced)
+        (function() {
+            const logoContainer = document.getElementById('logo-container');
+            if (!logoContainer) return;
+
+            const maxTilt = 12; // degrees
+
+            logoContainer.addEventListener('mousemove', (e) => {
+                const rect = logoContainer.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+
+                const tiltX = (maxTilt / 2 - x * maxTilt).toFixed(2);
+                const tiltY = (y * maxTilt - maxTilt / 2).toFixed(2);
+
+                logoContainer.style.transform = `perspective(1000px) rotateX(${tiltY}deg) rotateY(${tiltX}deg)`;
+            });
+
+            logoContainer.addEventListener('mouseleave', () => {
+                logoContainer.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                logoContainer.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+                
+                setTimeout(() => {
+                    logoContainer.style.transition = 'transform 0.1s ease-out';
+                }, 600);
+            });
+        })();
+    </script>
+</body>
+</html>
