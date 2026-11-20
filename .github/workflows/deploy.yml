@@ -1,4 +1,9 @@
-name: Deploy T-ARE Website
+name: Validate T-ARE Website
+
+# Deployment is NOT done here. Cloudflare Pages builds and deploys this repository
+# itself through its Git integration (the "Cloudflare Workers and Pages" GitHub App):
+# pushes to main go to production (https://t-areph.com), pull requests get preview URLs.
+# This workflow only lints the HTML and checks links.
 
 on:
   push:
@@ -28,45 +33,5 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v1
         with:
-          target: "**/*.html"
           fail: false
-          args: --verbose --no-progress
-
-  deploy-production:
-    name: Deploy to Production (Cloudflare Pages)
-    runs-on: ubuntu-latest
-    needs: validate
-    if: github.ref == 'refs/heads/main'
-    environment: production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: curly-parakeet
-          directory: .
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-
-  deploy-preview:
-    name: Deploy Preview (Cloudflare Pages)
-    runs-on: ubuntu-latest
-    needs: validate
-    if: github.event_name == 'pull_request'
-    environment: preview
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Deploy Preview to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: curly-parakeet
-          directory: .
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          # This creates a preview deployment for the PR
+          args: --verbose --no-progress './**/*.html'
